@@ -1,24 +1,24 @@
 let readlineSync = require('readline-sync');
-let vueltas = Number (readlineSync.question('Ingrese cantidad de vueltas: '));
+let vueltas = Number (readlineSync.question('Ingrese cantidad de vueltas: ')); // se agrega solicitud de cantidad de vueltas
 let tiempoVuelta=[];
 let tiempoTotal = 0;
-cargarTiempoVueltas(vueltas);
+cargarTiempoVueltas(vueltas); // se agrega las vueltas como parametro para cada funcion
 calcularTiempoTotal(vueltas);
 calcularPromedioVuelta(vueltas);
 
-function cargarTiempoVueltas(vueltas) {
+function cargarTiempoVueltas(vueltas) {    //funcion para cargar el tiempo de cada vuelta
     for(let i=0 ;i < vueltas ; i++) {
     tiempoVuelta[i]= readlineSync.questionInt('Ingrese tiempo de vuelta '+ (i+1) + ' :');
     console.log('El tiempo de la vuelta '+ (i+1) + ' es:' + tiempoVuelta[i]); 
     }
 }
-function calcularTiempoTotal(vueltas) {
+function calcularTiempoTotal(vueltas) { // funcion para calcular el tiempo total de vueltas
     for(let i=0 ;i < vueltas ; i++) {
     tiempoTotal += tiempoVuelta[i];
     } 
 console.log('El tiempo total es: '+ tiempoTotal);
 }
-function calcularPromedioVuelta(vueltas) {
+function calcularPromedioVuelta(vueltas) { // funcion para calcular el tiempo promedio de vueltas
     let promedio = tiempoTotal / vueltas;
-    console.log('El promedio de vueltas es: '+promedio);
+    console.log('El tiempo promedio de vueltas es: '+promedio);
 }
