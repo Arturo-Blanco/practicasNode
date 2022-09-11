@@ -8,17 +8,17 @@ calcularPromedioVuelta(vueltas);
 
 function cargarTiempoVueltas(vueltas) {    //funcion para cargar el tiempo de cada vuelta
     for(let i=0 ;i < vueltas ; i++) {
-    tiempoVuelta[i]= readlineSync.questionInt('Ingrese tiempo de vuelta '+ (i+1) + ' :');
-    console.log('El tiempo de la vuelta '+ (i+1) + ' es:' + tiempoVuelta[i]); 
+    tiempoVuelta[i]= readlineSync.questionInt('Ingrese tiempo en minutos de la vuelta '+ (i+1) + ' :');
+    console.log('El tiempo de la vuelta '+ (i+1) + ' es:' + tiempoVuelta[i]+' minutos'); 
     }
 }
 function calcularTiempoTotal(vueltas) { // funcion para calcular el tiempo total de vueltas
     for(let i=0 ;i < vueltas ; i++) {
     tiempoTotal += tiempoVuelta[i];
     } 
-console.log('El tiempo total es: '+ tiempoTotal);
+console.log('El tiempo total es: '+ tiempoTotal+' minutos');
 }
 function calcularPromedioVuelta(vueltas) { // funcion para calcular el tiempo promedio de vueltas
     let promedio = tiempoTotal / vueltas;
-    console.log('El tiempo promedio de vueltas es: '+promedio);
+    console.log('El tiempo promedio de vueltas es: '+promedio+' minutos');
 }
